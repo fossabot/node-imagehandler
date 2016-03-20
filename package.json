@@ -1,0 +1,15 @@
+{
+  "name": "node-imagehandler",
+  "version": "0.0.1",
+  "description": "NodeJS image handler ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Francois Laubscher",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "node-imager": "^0.0.3"
+  }
+}

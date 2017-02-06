@@ -1,6 +1,6 @@
 {
   "name": "node-imagehandler",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "NodeJS image handler ",
   "main": "app.js",
   "author": "Francois Laubscher",

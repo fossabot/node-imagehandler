@@ -4,38 +4,26 @@ a simple nodejs imagehandler using [node-imager](https://github.com/fjlaubscher/
 ## install
 go to the directory of the imagehandler in your terminal and run the below command to install dependencies
 ```
-$ npm install
+yarn install
 ```
 once packages are installed
 ```
-node app.js
+yarn start
 ```
 
 ##usage
-
-- resize image in application directory
-  
-  `http://nodeimager.tk/imager/150x150/test.png`
-
-  ![image](http://nodeimager.tk/imager/150x150/test.png)
-  
-- crop and resize image in application directory
-  
-  `http://nodeimager.tk/imager/c300x150/test.png`
-
-  ![image](http://nodeimager.tk/imager/c300x150/test.png)
   
 - resize remote image
   
-  `http://nodeimager.tk/imager/150x150/http://i.imgur.com/LatDgnq.png`
+  `https://node-imager.herokuapp.com/150x150/i.imgur.com/LatDgnq.png`
    
-  ![image](http://nodeimager.tk/imager/150x150/http://i.imgur.com/LatDgnq.png)
+  ![image](https://node-imager.herokuapp.com/150x150/i.imgur.com/LatDgnq.png)
 
 - crop and resize remote image
 
-  `http://nodeimager.tk/imager/c300x150/http://i.imgur.com/LatDgnq.png`
+  `https://node-imager.herokuapp.com/c/300x150/i.imgur.com/LatDgnq.png`
 
-  ![image](http://nodeimager.tk/imager/c300x150/http://i.imgur.com/LatDgnq.png)
+  ![image](https://node-imager.herokuapp.com/c/300x150/i.imgur.com/LatDgnq.png)
   
   
 

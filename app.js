@@ -36,4 +36,5 @@ app.get('/', (req, res) => { res.redirect('https://github.com/fjlaubscher/node-i
 app.get('/c/:dimensions/*', (req, res) => resizeImage(req, res, 'c'));
 app.get('/:dimensions/*', resizeImage);
 
-app.listen(3000, () => { console.log('Node imagehandler running on port 3000'); });
+const port = process.env.PORT || 3000;
+app.listen(port, () => { console.log(`Node imagehandler running on port ${port}`); });

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "NodeJS image handler ",
   "engines": {
-    "node": "6.9.0"
+    "node": "4.3.2"
   },
   "main": "app.js",
   "scripts": {

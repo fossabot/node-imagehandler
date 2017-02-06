@@ -1,29 +1,31 @@
-var express = require('express');
-var imager = require('node-imager');
-var app = express();
+const express = require('express');
+const imager = require('node-imager');
+const app = express();
 
 app.get('/', (req, res) => { res.redirect('https://github.com/fjlaubscher/node-imagehandler'); });
-app.get('/imager/*', function(req, res) {
-  // i cant seem to get this working using express params
-  // do it the hard way
-  var params = req.params[0].split('/');
-  var format = params[0];
-  params.splice(0, 1);
-  var url = params.join('/'); // rejoin params to build imageurl
+app.get('/:dimensions/:url', function(req, res) {
+  const dimensions = req.params.dimensions;
+  const url = req.params.url;
 
-  // check for a resize option
-  var option = '';
-  if (isNaN(format[0])) {
-    option = format[0];
-    format = format.substring(1);
+  const parts = dimensions && dimensions.toLowerCase().split('x') || null;    
+  if (!parts) {
+    res.send('Invalid dimensions. Please separate width and height as "<width>x<height>".');
+  } else if (parts.length != 2) {
+    res.send('Invalid dimensions. Missing a height or width.');
+  }
+  
+  if (!url) {
+    res.send(`Invalid image url: ${url}`);
   }
 
-  var parts = format.split('x');
-  var width = parseInt(parts[0]);
-  var height = parseInt(parts[1]);
-  imager.resize(option, width, height, url, (contentType, imageBuffer) => {
+  const width = parseInt(parts[0]);
+  const height = parseInt(parts[1]);
+
+  const options = { format: 'c', width, height, url };
+
+  imager.resizeWith(options, (contentType, imageBuffer) => {
     res.setHeader('Content-Type', contentType);
     res.send(imageBuffer);
   });
 });
-app.listen(8080);
+app.listen(3000);

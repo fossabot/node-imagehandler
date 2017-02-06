@@ -8,18 +8,22 @@ function resizeImage (req, res, format) {
 
   const parts = dimensions && dimensions.toLowerCase().split('x') || null;
   if (!parts) {
-    res.send('Invalid dimensions. Please separate width and height as "<width>x<height>".');
+    return res.send('Invalid dimensions. Please separate width and height as "<width>x<height>".');
   }
 
   const width = parseInt(parts[0]);
   const height = parseInt(parts[1]);
 
   if (isNaN(width) || isNaN(height)) {
-    res.send('Invalid dimensions. Missing a height or width.');
+    return res.send('Invalid dimensions. Missing a height or width.');
   }
   
   if (!url) {
-    res.send(`Invalid image url: ${url}`);
+    return res.send(`Invalid image url: ${url}`);
+  }
+
+  if (!new RegExp('\.(jpg|png|gif)', 'i').test(url)) {
+    return res.send(`Invalid image url: ${url}`); 
   }
 
   const imageUrl = new RegExp('http(s)?://', 'i').test(url) ? url : `http://${url}`;

@@ -18,6 +18,7 @@ yarn start
   `https://node-imager.herokuapp.com/150x150/i.imgur.com/LatDgnq.png`
    
   ![image](https://node-imager.herokuapp.com/150x150/i.imgur.com/LatDgnq.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Ffjlaubscher%2Fnode-imagehandler.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Ffjlaubscher%2Fnode-imagehandler?ref=badge_shield)
 
 - crop and resize remote image
 
@@ -28,3 +29,7 @@ yarn start
   
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Ffjlaubscher%2Fnode-imagehandler.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Ffjlaubscher%2Fnode-imagehandler?ref=badge_large)
